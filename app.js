@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config()
 const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
+const cocktailRoutes = require('./routes/cocktailRoutes')
 
 const app = express()
 
@@ -23,7 +24,7 @@ app.use(express.urlencoded({extended: false}))
 
 app.use(cors())
 
-//app.use(routes)
+app.use(cocktailRoutes)
 
 app.get("/", (req, res) => {
     res.send("<h1>Neat on the Rocks Server -- Please Leave</h1>")
