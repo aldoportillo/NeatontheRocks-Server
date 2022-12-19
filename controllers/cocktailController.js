@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const Cocktail = require('../models/cocktailModel')
 
 const getCocktails = asyncHandler(async (req, res) => {
     const cocktails = await Cocktail.find({})
