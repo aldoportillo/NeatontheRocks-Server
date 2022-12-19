@@ -6,9 +6,17 @@ const cocktailSchema = mongoose.Schema({
         required: [true, "Please enter a name"]
     },
     specs: {
-        type: [String],
+        type: [Object],
         required: [true, "Please add specs"]
-    }
+    },
+    instructions: {
+        type: [String],
+        required: [true, "Please add Instructions"]
+    },
+    description: {
+        type: String,
+        required: [true, "Please enter description"]
+    },
 })
 
 const Cocktail = mongoose.model("Cocktail", cocktailSchema);
