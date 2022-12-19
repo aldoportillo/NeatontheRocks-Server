@@ -23,3 +23,8 @@ const createCocktail = asyncHandler(async (req,res) => {
 
     res.status(201).json(cocktail)
 })
+
+module.exports = {
+    createCocktail,
+    getCocktails
+}
