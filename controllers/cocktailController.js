@@ -7,18 +7,20 @@ const getCocktails = asyncHandler(async (req, res) => {
 })
 
 const createCocktail = asyncHandler(async (req,res) => {
-    const {name, specs} = req.body;
+    const {name, specs, instructions, description} = req.body;
 
     //Remember to add image too but not yet
 
-    if(!name || !specs) {
+    if(!name || !specs || !instructions || !description) {
         res.status(400)
         throw new Error("Please fill in all fields")
     }
 
     const cocktail = await Cocktail.create({
         name,
-        specs
+        specs,
+        instructions, 
+        description
     })
 
     res.status(201).json(cocktail)
