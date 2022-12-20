@@ -18,7 +18,7 @@ const getCocktail = asyncHandler(async(req, res) => {
 })
 
 const createCocktail = asyncHandler(async (req,res) => {
-    const {name, specs, instructions, description} = req.body;
+    const {name, specs, instructions, description, image} = req.body;
 
     //Remember to add image too but not yet
 
@@ -31,7 +31,8 @@ const createCocktail = asyncHandler(async (req,res) => {
         name,
         specs,
         instructions, 
-        description
+        description,
+        image,
     })
 
     res.status(201).json(cocktail)

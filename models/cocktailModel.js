@@ -5,6 +5,10 @@ const cocktailSchema = mongoose.Schema({
         type: String,
         required: [true, "Please enter a name"]
     },
+    image: {
+        type: Object,
+        default: {},
+    },
     specs: {
         type: [Object],
         required: [true, "Please add specs"]
