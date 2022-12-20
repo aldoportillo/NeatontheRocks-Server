@@ -6,6 +6,17 @@ const getCocktails = asyncHandler(async (req, res) => {
     res.status(200).json(cocktails)
 })
 
+const getCocktail = asyncHandler(async(req, res) => {
+    const cocktail = await Cocktail.findById(req.params.id)
+
+    if(!cocktail){
+        res.status(404)
+        throw new Error("Product not found")
+    }
+
+    res.status(200).json(cocktail)
+})
+
 const createCocktail = asyncHandler(async (req,res) => {
     const {name, specs, instructions, description} = req.body;
 
@@ -28,5 +39,6 @@ const createCocktail = asyncHandler(async (req,res) => {
 
 module.exports = {
     createCocktail,
-    getCocktails
+    getCocktails,
+    getCocktail
 }
