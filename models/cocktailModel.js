@@ -21,6 +21,10 @@ const cocktailSchema = mongoose.Schema({
         type: String,
         required: [true, "Please enter description"]
     },
+    macros: {
+        type: Object,
+        required: [true, "Please add macros"]
+    }
 })
 
 const Cocktail = mongoose.model("Cocktail", cocktailSchema);
