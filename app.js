@@ -3,6 +3,7 @@ const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const cocktailRoutes = require('./routes/cocktailRoutes')
+const spiritRoutes = require('./routes/spiritRoutes')
 
 const app = express()
 
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 app.use(cocktailRoutes)
+app.use(spiritRoutes)
 
 app.get("/", (req, res) => {
     res.send("<h1>Neat on the Rocks Server -- Please Leave</h1>")
