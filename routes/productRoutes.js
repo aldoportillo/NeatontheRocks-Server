@@ -4,6 +4,6 @@ const router = express.Router();
 
 router.post("/api/product", createProduct)
 
-router.get("/api/products", getCocktails)
+router.get("/api/products", getProducts)
 
 module.exports = router

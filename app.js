@@ -4,6 +4,7 @@ const mongoose = require("mongoose")
 const cors = require("cors")
 const cocktailRoutes = require('./routes/cocktailRoutes')
 const spiritRoutes = require('./routes/spiritRoutes')
+const productRoutes = require('./routes/productRoutes')
 
 const app = express()
 
@@ -27,6 +28,7 @@ app.use(cors())
 
 app.use(cocktailRoutes)
 app.use(spiritRoutes)
+app.use(productRoutes)
 
 app.get("/", (req, res) => {
     res.send("<h1>Neat on the Rocks Server -- Please Leave</h1>")
